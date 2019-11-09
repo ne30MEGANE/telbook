@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TelBook</title>
+    <title><%= page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,14 +10,14 @@
   </head>
 
   <body>
-	  <h1>TelBook</h1>
-    <%= yield %>
+	  <header>
+      <%= render "shared/header" %>
+		</header>
+		<main>
+      <%= yield %>
+		</main>	
+    <footer>
+		  <%= render "shared/footer" %>
+	  </footer>
   </body>
-
-  <footer>
-	  <p>
-		  2019 NS NE30-0229K Takahashi Nonoka
-		</p> 
-	</footer>
-
 </html>
