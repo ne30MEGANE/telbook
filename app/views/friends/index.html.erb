@@ -1,0 +1,14 @@
+<% if @friends.present? %>
+  <table>
+	  <% @friends.each do |friend| %>
+		  <tr>
+			  <td><%= friend.id %></td>
+			  <td><%= link_to friend.name, friend %></td>
+				<td><%= link_to "編集", [:edit, friend] %></td>
+				<td><%= link_to "削除", friend, method: :delete %></td>
+			</tr>
+		<% end %>
+	</table>
+<% else %>
+  <p>友達が登録されていません。</p>
+<% end %>

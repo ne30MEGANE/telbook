@@ -1,0 +1,17 @@
+<% @page_title = @friend.name + "さん" %>
+
+<h2><%= @friend.name %></h2>
+
+<%if @telephones.present? %>
+  <table>
+    <% @telephones.each do |telephone| %>
+	  <tr>
+      <td><%= telephones.number %></td>
+			<td><%= image_tag "cellphone.png",alt: "(携帯)" if telephones.cellphone %></td>
+      <td><%= link_to "削除", friend_telephone_path(@friend, telephone), method: :delete %></td>
+		</tr>	
+  </table>
+<% else %>
+  <p>電話番号が登録されていません。</p>
+<% end %>
+以下フォーム書く

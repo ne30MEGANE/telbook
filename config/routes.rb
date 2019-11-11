@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "top#index"
+  root "friends#index"
   #あとでrootをフレンズコントローラーのindexアクションにする
 
   resources :friends do 
