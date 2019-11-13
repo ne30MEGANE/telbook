@@ -10,8 +10,7 @@ class TelephonesController < ApplicationController
     @telephone = Telephone.new()
   end
 
-  def show
-    redirect_to telephones_path
+  def show 
   end
 
   def new
@@ -22,7 +21,7 @@ class TelephonesController < ApplicationController
     @telephone = Telephone.new(params[:telephone])
     @telephone.friend_id = @friend.id
     if @telephone.save
-      redirect_to @telephone, notice: "電話番号を追加しました。"
+      redirect_to [@friend, :telephones], notice: "電話番号を追加しました。"
     else
       render "index"
     end
@@ -32,6 +31,6 @@ class TelephonesController < ApplicationController
     @friend = Friend.find(session[:friendID])
     @telephone = @friend.telephones.find(params[:id])
     @telephone.destroy
-    redirect_to :telephones, notice: "電話番号を削除しました。"
+    redirect_to [@friend, :telephones], notice: "電話番号を削除しました。"
   end
 end
