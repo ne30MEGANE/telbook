@@ -1,5 +1,9 @@
 <% @page_title = "友達を追加する" %>
 
+<div class="tool">
+  <%= link_to "友達一覧へ戻る", :root %>
+</div>
+
 <%= form_for @friend do |form| %>
   <%= render "form", form: form %>
   <%= form.submit %>

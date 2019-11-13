@@ -13,9 +13,12 @@
 	  <header>
       <%= render "shared/header" %>
 		</header>
-		<main　class = "contents">
+		<div class="contents">
+      <% if flash.notice %>
+        <p class="notice"><%= flash.notice %></p>
+      <% end %>
       <%= yield %>
-		</main>	
+		</div>	
     <footer>
 		  <%= render "shared/footer" %>
 	  </footer>

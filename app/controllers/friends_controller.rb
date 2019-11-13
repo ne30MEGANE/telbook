@@ -17,6 +17,12 @@ class FriendsController < ApplicationController
 	end
 
 	def create
+    @friend = Friend.new(params[:friend])
+    if @friend.save
+      redirect_to @friend, notice: "友達を追加しました。"
+    else
+      render "new"
+    end
 	end
 
 	def update
