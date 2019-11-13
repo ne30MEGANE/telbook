@@ -4,6 +4,7 @@
 
 <div class = "friendsArea">
   <% if @friends.present? %>
+    <%= paginate @friends %>
     <table>
 	    <% @friends.each do |friend| %>
 		    <tr>
@@ -14,6 +15,7 @@
 		  	</tr>
   		<% end %>
 	  </table>
+    <%= paginate @friends %>
   <% else %>
     <p>友達が登録されていません。</p>
   <% end %>
