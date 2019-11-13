@@ -14,6 +14,41 @@
  *= require_self
  */
 body{
+  padding: 0px;
+  margin: 0px;
   background-color: #edeff1;
 	color: #586a66;
 } 
+
+.contents{
+  margin:0 15%;
+}
+
+.notice{
+  background-color: #ccccff;
+}
+
+.title{
+  color: whitesmoke;
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 18pt;
+  position: relative;
+  margin: 0px;
+  padding-top: 20px;
+  padding-left: 10%;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(135deg,#99ccff 0%,  #cc66ff 20%, #9900cc 80%, #9999ff 100%);
+  box-shadow:0px 5px 5px silver;
+}
+
+.tool{
+  text-align: right;
+}
+
+footer{
+  padding-top: 20px;
+  text-align: center;
+  font-size: 15px;
+}
