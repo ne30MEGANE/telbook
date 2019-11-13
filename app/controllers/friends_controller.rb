@@ -3,7 +3,7 @@ class FriendsController < ApplicationController
 	  @friends = Friend.order(:id).page(params[:page]).per(20)
 	end
 
-	def show
+	def show #多分これつかってない
 	  @friend = Friend.find(params[:id])
 		@telephones = @friend.telephones
 	end
@@ -19,15 +19,25 @@ class FriendsController < ApplicationController
 	def create
     @friend = Friend.new(params[:friend])
     if @friend.save
-      redirect_to @friend, notice: "友達を追加しました。"
+      redirect_to :root, notice: "友達を追加しました。"
     else
       render "new"
     end
 	end
 
 	def update
+    @friend = Friend.find(params[:id])
+    @friend.assign_attributes(params[:friend])
+    if @friend.save
+      redirect_to :root, notice: "友達の情報を更新しました。"
+    else
+      render "edit"
+    end
 	end
 
 	def destroy
+    @friend = Friend.find(params[:id])
+    @friend.destroy
+    redirect_to :friends, notice: "友達を削除しました。"
 	end
 end
