@@ -4,6 +4,6 @@ Rails.application.routes.draw do
 
   resources :friends do 
 	  resources :telephones
-	end	
-
+	end
+  resources :telephones
 end

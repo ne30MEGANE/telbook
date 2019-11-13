@@ -8,7 +8,7 @@
     <table>
 	    <% @friends.each do |friend| %>
 		    <tr>
-			    <td><%= friend.id %></td>
+			    <td>・</td>
   			  <td><%= link_to friend.name, friend_telephones_path(friend) %></td>
 	  			<td><%= link_to "編集", [:edit, friend] %></td>
 		  		<td><%= link_to "削除", friend, method: :delete %></td>

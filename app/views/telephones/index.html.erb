@@ -5,3 +5,31 @@
 </div>
 
 <h2><%= @friend.name %>　さん</h2>
+
+<div>
+  <%= form_for @telephone do |f| %>
+    <%= f.text_field :number, placeholder: "電話番号" %>
+    <%= f.check_box :cellphone %><%= f.label :cellphone, "携帯" %>
+    <%= f.submit "登録" %>
+  <% end %>
+</div>
+
+<table>
+  <% if @telephones.present? %>
+    <% @telephones.each do |tel| %>
+      <tr>
+        <td>・</td>
+        <td><%= tel.number %></td>
+        <td>
+          <% if tel.cellphone %>
+            (携帯)
+          <% end %>
+        </td>
+        <td><%= link_to "削除", tel, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+      </tr>
+    <% end %>
+  <% else %>
+    <p>電話番号が登録されていません。</p>
+  <% end %>
+
+</table>
