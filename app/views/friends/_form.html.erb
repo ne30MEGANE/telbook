@@ -1,3 +1,12 @@
+<% if @friend.errors.present? %>
+  <div id="errors">
+    <ul>
+      <% @friend.errors.full_messages.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
 <table>
   <tr>
     <th><%= form.label :name, "名前" %></th>

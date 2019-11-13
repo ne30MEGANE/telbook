@@ -6,6 +6,16 @@
 
 <h2><%= @friend.name %>　さん</h2>
 
+<% if @telephone.errors.present? %>
+  <div id="errors">
+    <ul>
+      <% @telephone.errors.full_messages.each do |m| %>
+        <li><%= m %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div>
   <%= form_for @telephone do |f| %>
     <%= f.text_field :number, placeholder: "電話番号" %>
